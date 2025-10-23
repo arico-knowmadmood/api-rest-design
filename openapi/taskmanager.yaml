@@ -14,6 +14,8 @@ servers:
     description: Servidor local de desarrollo
   - url: https://staging.api.taskmanager.dev/v1
     description: Servidor de staging
+security:
+  - bearerAuth: []
 paths:
   /tasks:
     get:
@@ -106,3 +108,9 @@ components:
         details:
           type: string
           example: "The field 'title' is required"
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
